@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Login | BizShield AI</title>
+
+    <!-- Font Awesome Icons -->
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+    <!-- Login CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         LIGHT / DARK MODE
+    ========================= -->
+
+    <button
+        class="theme-toggle"
+        id="themeToggle"
+        type="button"
+        aria-label="Switch theme"
+    >
+
+        <i class="fa-solid fa-sun"></i>
+
+        <i class="fa-solid fa-moon"></i>
+
+    </button>
+
+
+    <!-- =========================
+         MAIN LOGIN PAGE
+    ========================= -->
+
+    <main class="login-page">
+
+
+        <!-- =========================
+             BRAND SECTION
+        ========================= -->
+
+        <section class="login-brand-section">
+
+            <div class="login-brand-content">
+
+
+                <!-- LOGO -->
+
+                <div class="login-brand-logo-wrapper">
+
+                    <img
+                        src="/images/bizshield-logo.png"
+                        alt="BizShield AI Logo"
+                        class="login-brand-logo"
+                    >
+
+                </div>
+
+
+                <!-- PLATFORM DESCRIPTION -->
+
+                <p class="login-brand-subtitle">
+                    Business Management &amp; Security Platform
+                </p>
+
+
+                <!-- DIVIDER -->
+
+                <div class="login-divider">
+
+                    <span></span>
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <span></span>
+
+                </div>
+
+
+                <!-- TAGLINE -->
+
+                <p class="login-brand-tagline">
+                    Secure Business. Smarter Decisions.
+                </p>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             LOGIN SECTION
+        ========================= -->
+
+        <section class="login-section">
+
+
+            <div class="login-card">
+
+
+                <!-- =========================
+                     LOGIN HEADER
+                ========================= -->
+
+                <div class="login-header">
+
+                    <div class="login-shield-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                    <h2>Welcome Back</h2>
+
+                    <p class="login-subtitle">
+                        Sign in to continue to BizShield AI
+                    </p>
+
+                </div>
+
+
+                <!-- =========================
+                     ROLE SELECTION
+                ========================= -->
+
+                <div
+                    class="role-selection"
+                    aria-label="Select your role"
+                >
+
+
+                    <!-- ADMIN -->
+
+                    <button
+                        type="button"
+                        class="role-card active"
+                        data-role="ADMIN"
+                    >
+
+                        <span class="role-icon">
+                            <i class="fa-solid fa-user-shield"></i>
+                        </span>
+
+                        <span>Admin</span>
+
+                    </button>
+
+
+                    <!-- BUSINESS USER -->
+
+                    <button
+                        type="button"
+                        class="role-card"
+                        data-role="BUSINESS_USER"
+                    >
+
+                        <span class="role-icon">
+                            <i class="fa-solid fa-briefcase"></i>
+                        </span>
+
+                        <span>Business User</span>
+
+                    </button>
+
+
+                    <!-- VIEWER -->
+
+                    <button
+                        type="button"
+                        class="role-card"
+                        data-role="VIEWER"
+                    >
+
+                        <span class="role-icon">
+                            <i class="fa-solid fa-eye"></i>
+                        </span>
+
+                        <span>Viewer</span>
+
+                    </button>
+
+
+                </div>
+
+
+                <!-- =========================
+                     LOGIN FORM
+                ========================= -->
+
+                <form
+                    method="post"
+                    action="/login"
+                >
+
+
+                    <!-- SELECTED ROLE -->
+
+                    <input
+                        type="hidden"
+                        id="selectedRole"
+                        name="selectedRole"
+                        value="ADMIN"
+                    >
+
+
+                    <!-- USERNAME -->
+
+                    <div class="input-group">
+
+                        <span class="input-icon">
+                            <i class="fa-solid fa-user"></i>
+                        </span>
+
+                        <input
+                            type="text"
+                            id="username"
+                            name="username"
+                            placeholder="Enter your username"
+                            autocomplete="username"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- PASSWORD -->
+
+                    <div class="input-group password-group">
+
+                        <span class="input-icon">
+                            <i class="fa-solid fa-lock"></i>
+                        </span>
+
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Enter your password"
+                            autocomplete="current-password"
+                            required
+                        >
+
+
+                        <!-- SHOW / HIDE PASSWORD -->
+
+                        <button
+                            type="button"
+                            class="password-toggle"
+                            id="passwordToggle"
+                            aria-label="Show password"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+                    <!-- =========================
+                         LOGIN OPTIONS
+                    ========================= -->
+
+                    <div class="login-options">
+
+
+                        <!-- REMEMBER ME -->
+
+                        <label class="remember-me">
+
+                            <input
+                                type="checkbox"
+                                name="remember-me"
+                            >
+
+                            <span>Remember Me</span>
+
+                        </label>
+
+
+                        <!-- FORGOT PASSWORD -->
+
+                        <a
+                            href="#"
+                            class="forgot-password"
+                        >
+                            Forgot Password?
+                        </a>
+
+
+                    </div>
+
+
+                    <!-- =========================
+                         LOGIN BUTTON
+                    ========================= -->
+
+                    <button
+                        type="submit"
+                        class="login-button"
+                    >
+
+                        <span>Login</span>
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+
+                </form>
+
+
+                <!-- =========================
+                     FOOTER
+                ========================= -->
+
+                <div class="login-footer">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                    <br>
+
+                    © 2026 BizShield AI. All rights reserved.
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+
+    <!-- LOGIN JAVASCRIPT -->
+
+    <script src="login.js"></script>
+
+</body>
+
+</html>

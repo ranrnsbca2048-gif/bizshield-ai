@@ -1,0 +1,2823 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>BizShield AI | Dashboard</title>
+
+    <link rel="stylesheet" href="/style.css">
+</head>
+
+
+<body>
+
+<div class="dashboard-layout">
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-brand">
+
+            <img
+                src="/images/shield-icon.png"
+                alt="BizShield AI Shield"
+                class="sidebar-logo"
+            >
+
+            <img
+                src="/images/brand-title.png"
+                alt="BizShield AI"
+                class="sidebar-brand-name"
+            >
+
+            <p class="brand-tagline">
+                BUSINESS • SECURITY • INTELLIGENCE
+            </p>
+
+        </div>
+
+
+        <!-- =========================================
+             NAVIGATION
+        ========================================== -->
+
+        <nav class="sidebar-nav">
+
+            <a href="#dashboard"
+               class="nav-link active"
+               data-section="dashboard">
+
+                <span>🏠</span>
+                Dashboard
+
+            </a>
+
+
+            <a href="#inventory"
+               class="nav-link"
+               data-section="inventory">
+
+                <span>📦</span>
+                Inventory
+
+            </a>
+
+
+            <a href="#sales"
+               class="nav-link"
+               data-section="sales">
+
+                <span>💰</span>
+                Sales
+
+            </a>
+
+
+            <a href="#low-stock"
+               class="nav-link"
+               data-section="low-stock">
+
+                <span>⚠️</span>
+                Low Stock Alerts
+
+            </a>
+
+
+            <a href="#security"
+               class="nav-link"
+               data-section="security">
+
+                <span>🛡️</span>
+                Security
+
+            </a>
+
+
+            <a href="#business-insights"
+               class="nav-link"
+               data-section="business-insights">
+
+                <span>📊</span>
+                Business Insights
+
+            </a>
+
+        </nav>
+
+
+        <!-- =========================================
+             SIDEBAR BOTTOM
+        ========================================== -->
+
+        <div class="sidebar-bottom">
+
+            <div class="secure-message">
+
+                <span>🛡️</span>
+
+                <div>
+                    <strong>BizShield Protected</strong>
+
+                    <p>
+                        Your business data is secured.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =========================================
+         MAIN CONTENT
+    ========================================== -->
+
+    <div class="dashboard-content">
+
+
+        <!-- =========================================
+             TOPBAR
+        ========================================== -->
+
+        <header class="topbar">
+
+            <div class="welcome-area">
+
+                <h2 id="topbar-title">
+                    Business Dashboard
+                </h2>
+
+                <p id="topbar-subtitle">
+                    Monitor your business, inventory and security.
+                </p>
+
+            </div>
+
+
+            <div class="topbar-actions">
+
+
+                <!-- SEARCH -->
+
+                <div class="search-container">
+
+                    <input
+                        type="text"
+                        id="global-search"
+                        placeholder="Search products..."
+                    >
+
+                </div>
+
+
+                <!-- THEME -->
+
+                <button
+                    type="button"
+                    id="theme-toggle"
+                    class="icon-button"
+                    title="Toggle Theme">
+
+                    🌙
+
+                </button>
+
+
+                <!-- NOTIFICATIONS -->
+
+                <div class="notification-container">
+
+                    <button
+                        type="button"
+                        id="notification-toggle"
+                        class="icon-button"
+                        title="Notifications">
+
+                        🔔
+
+                    </button>
+
+
+                    <div
+                        id="notification-menu"
+                        class="notification-menu">
+
+                        <div class="notification-header">
+
+                            <strong>
+                                Notifications
+                            </strong>
+
+                            <button
+                                type="button"
+                                id="clear-notifications">
+
+                                Clear
+
+                            </button>
+
+                        </div>
+
+
+                        <div id="notification-list">
+
+                            <div class="notification-empty">
+                                No new notifications.
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- USER -->
+
+                <div class="user-profile">
+
+                    <div class="user-avatar"
+                         id="user-avatar">
+
+                        U
+
+                    </div>
+
+                    <span id="current-username">
+                        User
+                    </span>
+
+                </div>
+
+
+                <!-- USER MENU -->
+
+                <div class="menu-container">
+
+                    <button
+                        type="button"
+                        id="menu-toggle"
+                        class="menu-toggle">
+
+                        ⋮
+
+                    </button>
+
+
+                    <div
+                        id="user-menu"
+                        class="user-menu">
+
+                        <button
+                            type="button"
+                            id="theme-menu-button"
+                            class="menu-item">
+
+                            🌙 Theme
+
+                        </button>
+
+
+                        <div class="menu-divider"></div>
+
+
+                        <button
+                            type="button"
+                            id="logout-button"
+                            class="menu-item logout-item">
+
+                            🚪 Logout
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =========================================
+             MAIN
+        ========================================== -->
+
+        <main>
+
+
+            <!-- =====================================
+                 DASHBOARD
+            ====================================== -->
+
+            <section
+                id="dashboard"
+                class="dashboard-section active-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Business Overview
+                    </h2>
+
+                    <p>
+                        Get a quick overview of your business activity.
+                    </p>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon">
+                            📦
+                        </div>
+
+                        <div>
+
+                            <p>Total Products</p>
+
+                            <h3 id="total-products">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon success-icon">
+                            💰
+                        </div>
+
+                        <div>
+
+                            <p>Total Sales</p>
+
+                            <h3 id="total-sales-count">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon warning-icon">
+                            ⚠️
+                        </div>
+
+                        <div>
+
+                            <p>Low Stock</p>
+
+                            <h3 id="low-stock-count">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="stat-card">
+
+                        <div class="stat-icon purple-icon">
+                            🛡️
+                        </div>
+
+                        <div>
+
+                            <p>Security Events</p>
+
+                            <h3 id="security-event-count">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DASHBOARD QUICK ACTIVITY -->
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <h3>
+                                Recent Activity
+                            </h3>
+
+                            <p>
+                                Latest business and security updates.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div id="dashboard-activity">
+
+                        <div class="empty-state">
+
+                            Loading activity...
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 INVENTORY
+            ====================================== -->
+
+            <section
+                id="inventory"
+                class="dashboard-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Inventory Management
+                    </h2>
+
+                    <p>
+                        Add, update and manage your products.
+                    </p>
+
+                </div>
+
+
+                <!-- ADD PRODUCT -->
+
+                <div class="action-card">
+
+                    <div class="action-card-heading">
+
+                        <h3>
+                            Add New Product
+                        </h3>
+
+                        <p>
+                            Enter product information below.
+                        </p>
+
+                    </div>
+
+
+                    <form id="add-product-form">
+
+                        <div class="form-grid">
+
+                            <div>
+
+                                <label>
+                                    Product Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="product-name"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Category
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="product-category"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Quantity
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="product-quantity"
+                                    min="0"
+                                    required
+                                >
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Price
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="product-price"
+                                    min="0"
+                                    step="0.01"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit">
+
+                            + Add Product
+
+                        </button>
+
+
+                        <p id="add-product-message"
+                           class="form-message"></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- INVENTORY TABLE -->
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <div>
+
+                            <h3>
+                                Product Inventory
+                            </h3>
+
+                            <p>
+                                View and manage all available products.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="table-container">
+
+                        <table>
+
+                            <thead>
+
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Product</th>
+                                <th>Category</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Status</th>
+                                <th>Actions</th>
+
+                            </tr>
+
+                            </thead>
+
+
+                            <tbody id="inventory-table-body">
+
+                            </tbody>
+
+                        </table>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 SALES
+            ====================================== -->
+
+            <section
+                id="sales"
+                class="dashboard-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Sales Management
+                    </h2>
+
+                    <p>
+                        Record sales and monitor business revenue.
+                    </p>
+
+                </div>
+
+
+                <!-- SALES STATS -->
+
+                <div class="stats-grid sales-stats">
+
+                    <div class="stat-card">
+
+                        <div>
+
+                            <p>Total Revenue</p>
+
+                            <h3 id="total-sales-revenue">
+                                ₹0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stat-card">
+
+                        <div>
+
+                            <p>Units Sold</p>
+
+                            <h3 id="total-units-sold">
+                                0
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADD SALE -->
+
+                <div id="add-sale-section"
+                     class="action-card">
+
+                    <div class="action-card-heading">
+
+                        <h3>
+                            Record a Sale
+                        </h3>
+
+                        <p>
+                            Select a product and record the sale.
+                        </p>
+
+                    </div>
+
+
+                    <form id="add-sale-form">
+
+                        <div class="form-grid">
+
+                            <div>
+
+                                <label>
+                                    Product
+                                </label>
+
+                                <select
+                                    id="sale-product"
+                                    required>
+
+                                    <option value="">
+                                        Select Product
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div>
+
+                                <label>
+                                    Quantity Sold
+                                </label>
+
+                                <input
+                                    type="number"
+                                    id="sale-quantity"
+                                    min="1"
+                                    required
+                                >
+
+                            </div>
+
+                        </div>
+
+
+                        <button type="submit">
+
+                            Record Sale
+
+                        </button>
+
+
+                        <p id="sale-message"
+                           class="form-message"></p>
+
+                    </form>
+
+                </div>
+
+
+                <!-- SALES LIST -->
+
+                <div class="content-card">
+
+                    <div class="card-heading">
+
+                        <h3>
+                            Recent Sales
+                        </h3>
+
+                    </div>
+
+
+                    <div id="sales-list">
+
+                        <div class="empty-state">
+                            Loading sales...
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 LOW STOCK
+            ====================================== -->
+
+            <section
+                id="low-stock"
+                class="dashboard-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Low Stock Alerts
+                    </h2>
+
+                    <p>
+                        Products that require immediate attention.
+                    </p>
+
+                </div>
+
+
+                <div id="low-stock-list">
+
+                    <div class="empty-state">
+
+                        Loading low stock alerts...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 SECURITY
+            ====================================== -->
+
+            <section
+                id="security"
+                class="dashboard-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Security Center
+                    </h2>
+
+                    <p>
+                        Monitor login activity and security events.
+                    </p>
+
+                </div>
+
+
+                <div class="security-status-card">
+
+                    <div>
+
+                        <h3>
+                            🛡️ BizShield Security
+                        </h3>
+
+                        <p>
+                            Your business platform is protected with
+                            authentication and role-based access control.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="security-activity-header">
+
+                    <div>
+
+                        <h3>
+                            Security Activity
+                        </h3>
+
+                        <p>
+                            Recent login and security events.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        id="view-all-security"
+                        class="secondary-button">
+
+                        View All Activity
+
+                    </button>
+
+                </div>
+
+
+                <div id="security-events-list">
+
+                    <div class="empty-state">
+
+                        Loading security activity...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- =====================================
+                 BUSINESS INSIGHTS
+            ====================================== -->
+
+            <section
+                id="business-insights"
+                class="dashboard-section">
+
+                <div class="section-header">
+
+                    <h2>
+                        Business Insights
+                    </h2>
+
+                    <p>
+                        Smart insights generated from your business data.
+                    </p>
+
+                </div>
+
+
+                <div id="business-insights-list">
+
+                    <div class="empty-state">
+
+                        Loading business insights...
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+        </main>
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer>
+
+            <p>
+                © 2026 BizShield AI — Business Management & Security Platform
+            </p>
+
+        </footer>
+
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================= -->
+
+<script>
+
+
+/* =========================================
+   API ENDPOINTS
+========================================= */
+
+const API = {
+
+    products: "/api/products",
+    lowStock: "/api/products/low-stock",
+    sales: "/api/sales",
+    security: "/api/security-events",
+    insights: "/api/business-insights",
+    currentUser: "/api/auth/me"
+
+};
+
+
+
+/* =========================================
+   GLOBAL VARIABLES
+========================================= */
+
+let allProducts = [];
+let allSales = [];
+let allSecurityEvents = [];
+
+
+
+/* =========================================
+   DOM ELEMENTS
+========================================= */
+
+const inventoryTableBody =
+    document.getElementById("inventory-table-body");
+
+const saleProductSelect =
+    document.getElementById("sale-product");
+
+const lowStockList =
+    document.getElementById("low-stock-list");
+
+const salesList =
+    document.getElementById("sales-list");
+
+const securityEventsList =
+    document.getElementById("security-events-list");
+
+const businessInsightsList =
+    document.getElementById("business-insights-list");
+
+
+
+/* =========================================
+   NAVIGATION
+========================================= */
+
+const navLinks =
+    document.querySelectorAll(".nav-link");
+
+const dashboardSections =
+    document.querySelectorAll(".dashboard-section");
+
+
+navLinks.forEach(link => {
+
+    link.addEventListener("click", event => {
+
+        event.preventDefault();
+
+        const sectionId =
+            link.dataset.section;
+
+
+        dashboardSections.forEach(section => {
+
+            section.classList.remove(
+                "active-section"
+            );
+
+        });
+
+
+        navLinks.forEach(nav => {
+
+            nav.classList.remove("active");
+
+        });
+
+
+        const selectedSection =
+            document.getElementById(sectionId);
+
+
+        if (selectedSection) {
+
+            selectedSection.classList.add(
+                "active-section"
+            );
+
+        }
+
+
+        link.classList.add("active");
+
+
+        updateTopbar(sectionId);
+
+    });
+
+});
+
+
+
+/* =========================================
+   TOPBAR TEXT
+========================================= */
+
+function updateTopbar(sectionId) {
+
+    const title =
+        document.getElementById("topbar-title");
+
+    const subtitle =
+        document.getElementById("topbar-subtitle");
+
+
+    const pageData = {
+
+        dashboard: [
+            "Business Dashboard",
+            "Monitor your business, inventory and security."
+        ],
+
+        inventory: [
+            "Inventory Management",
+            "Manage your business products and stock."
+        ],
+
+        sales: [
+            "Sales Management",
+            "Monitor revenue and sales activity."
+        ],
+
+        "low-stock": [
+            "Low Stock Alerts",
+            "Products requiring your attention."
+        ],
+
+        security: [
+            "Security Center",
+            "Monitor your account and security events."
+        ],
+
+        "business-insights": [
+            "Business Insights",
+            "Smart information from your business data."
+        ]
+
+    };
+
+
+    if (pageData[sectionId]) {
+
+        title.textContent =
+            pageData[sectionId][0];
+
+        subtitle.textContent =
+            pageData[sectionId][1];
+
+    }
+
+}
+
+
+
+/* =========================================
+   THEME
+========================================= */
+
+const themeToggle =
+    document.getElementById("theme-toggle");
+
+const themeMenuButton =
+    document.getElementById("theme-menu-button");
+
+
+function applyTheme(theme) {
+
+    document.documentElement.classList.toggle(
+        "light-theme",
+        theme === "light"
+    );
+
+
+    localStorage.setItem(
+        "bizshield-theme",
+        theme
+    );
+
+
+    themeToggle.textContent =
+        theme === "light"
+            ? "☀️"
+            : "🌙";
+
+}
+
+
+const savedTheme =
+    localStorage.getItem("bizshield-theme")
+    || "dark";
+
+
+applyTheme(savedTheme);
+
+
+themeToggle.addEventListener("click", () => {
+
+    const isLight =
+        document.documentElement.classList.contains(
+            "light-theme"
+        );
+
+
+    applyTheme(
+        isLight ? "dark" : "light"
+    );
+
+});
+
+
+themeMenuButton.addEventListener("click", () => {
+
+    const isLight =
+        document.documentElement.classList.contains(
+            "light-theme"
+        );
+
+
+    applyTheme(
+        isLight ? "dark" : "light"
+    );
+
+});
+
+
+
+/* =========================================
+   USER MENU
+========================================= */
+
+const menuToggle =
+    document.getElementById("menu-toggle");
+
+const userMenu =
+    document.getElementById("user-menu");
+
+
+menuToggle.addEventListener("click", event => {
+
+    event.stopPropagation();
+
+    userMenu.classList.toggle("show-menu");
+
+});
+
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+const notificationToggle =
+    document.getElementById(
+        "notification-toggle"
+    );
+
+const notificationMenu =
+    document.getElementById(
+        "notification-menu"
+    );
+
+
+notificationToggle.addEventListener(
+    "click",
+    event => {
+
+        event.stopPropagation();
+
+        notificationMenu.classList.toggle(
+            "show-notifications"
+        );
+
+    }
+);
+
+
+document.addEventListener("click", event => {
+
+    if (!event.target.closest(".menu-container")) {
+
+        userMenu.classList.remove(
+            "show-menu"
+        );
+
+    }
+
+
+    if (
+        !event.target.closest(
+            ".notification-container"
+        )
+    ) {
+
+        notificationMenu.classList.remove(
+            "show-notifications"
+        );
+
+    }
+
+});
+
+
+document
+    .getElementById("clear-notifications")
+    .addEventListener("click", () => {
+
+        document.getElementById(
+            "notification-list"
+        ).innerHTML = `
+            <div class="notification-empty">
+                No new notifications.
+            </div>
+        `;
+
+    });
+
+
+
+/* =========================================
+   LOAD CURRENT USER
+========================================= */
+
+async function loadCurrentUser() {
+
+    try {
+
+        const response =
+            await fetch(API.currentUser);
+
+
+        if (!response.ok) {
+            return;
+        }
+
+
+        const user =
+            await response.json();
+
+
+        const username =
+            user.username || "User";
+
+
+        document.getElementById(
+            "current-username"
+        ).textContent = username;
+
+
+        document.getElementById(
+            "user-avatar"
+        ).textContent =
+            username.charAt(0)
+                .toUpperCase();
+
+
+    } catch (error) {
+
+        console.error(
+            "Unable to load current user:",
+            error
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   LOAD PRODUCTS
+========================================= */
+
+async function loadProducts() {
+
+    try {
+
+        const response =
+            await fetch(API.products);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load products"
+            );
+
+        }
+
+
+        allProducts =
+            await response.json();
+
+
+        renderProducts();
+
+        populateSaleProducts();
+
+
+        document.getElementById(
+            "total-products"
+        ).textContent =
+            allProducts.length;
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        inventoryTableBody.innerHTML = `
+
+            <tr>
+
+                <td colspan="7"
+                    class="empty-table">
+
+                    Unable to load products.
+
+                </td>
+
+            </tr>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =========================================
+   RENDER PRODUCTS
+========================================= */
+
+function renderProducts(products = allProducts) {
+
+    inventoryTableBody.innerHTML = "";
+
+
+    if (!products.length) {
+
+        inventoryTableBody.innerHTML = `
+
+            <tr>
+
+                <td colspan="7"
+                    class="empty-table">
+
+                    No products available.
+
+                </td>
+
+            </tr>
+
+        `;
+
+        return;
+
+    }
+
+
+    products.forEach(product => {
+
+        const quantity =
+            Number(product.quantity || 0);
+
+
+        let statusClass =
+            "in-stock-status";
+
+        let statusText =
+            "In Stock";
+
+
+        if (quantity === 0) {
+
+            statusClass =
+                "out-of-stock-status";
+
+            statusText =
+                "Out of Stock";
+
+        }
+        else if (quantity <= 5) {
+
+            statusClass =
+                "low-stock-status";
+
+            statusText =
+                "Low Stock";
+
+        }
+
+
+        const row =
+            document.createElement("tr");
+
+
+        row.innerHTML = `
+
+            <td>
+                ${product.id ?? "-"}
+            </td>
+
+            <td>
+                ${escapeHtml(product.name)}
+            </td>
+
+            <td>
+                ${escapeHtml(product.category)}
+            </td>
+
+            <td>
+                ${quantity}
+            </td>
+
+            <td>
+                ₹${Number(product.price || 0).toFixed(2)}
+            </td>
+
+            <td>
+
+                <span class="${statusClass}">
+                    ${statusText}
+                </span>
+
+            </td>
+
+            <td>
+
+                <button
+                    class="edit-product-btn"
+                    onclick="editProduct(${product.id})">
+
+                    Edit
+
+                </button>
+
+
+                <button
+                    class="delete-product-btn"
+                    onclick="deleteProduct(${product.id})">
+
+                    Delete
+
+                </button>
+
+            </td>
+
+        `;
+
+
+        inventoryTableBody.appendChild(row);
+
+    });
+
+}
+
+
+
+/* =========================================
+   ADD PRODUCT
+========================================= */
+
+document
+    .getElementById("add-product-form")
+    .addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+
+            const message =
+                document.getElementById(
+                    "add-product-message"
+                );
+
+
+            const product = {
+
+                name:
+                    document.getElementById(
+                        "product-name"
+                    ).value.trim(),
+
+                category:
+                    document.getElementById(
+                        "product-category"
+                    ).value.trim(),
+
+                quantity:
+                    Number(
+                        document.getElementById(
+                            "product-quantity"
+                        ).value
+                    ),
+
+                price:
+                    Number(
+                        document.getElementById(
+                            "product-price"
+                        ).value
+                    )
+
+            };
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API.products,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(product)
+
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to add product"
+                    );
+
+                }
+
+
+                message.textContent =
+                    "✓ Product added successfully.";
+
+                message.className =
+                    "form-message success-message";
+
+
+                event.target.reset();
+
+
+                await loadProducts();
+
+                await loadLowStock();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                message.textContent =
+                    "✕ Unable to add product.";
+
+                message.className =
+                    "form-message error-message";
+
+            }
+
+        }
+    );
+
+
+
+/* =========================================
+   EDIT PRODUCT
+========================================= */
+
+async function editProduct(id) {
+
+    const product =
+        allProducts.find(
+            item => item.id === id
+        );
+
+
+    if (!product) {
+        return;
+    }
+
+
+    const name =
+        prompt(
+            "Product Name:",
+            product.name
+        );
+
+
+    if (name === null) {
+        return;
+    }
+
+
+    const category =
+        prompt(
+            "Category:",
+            product.category
+        );
+
+
+    if (category === null) {
+        return;
+    }
+
+
+    const quantity =
+        prompt(
+            "Quantity:",
+            product.quantity
+        );
+
+
+    if (quantity === null) {
+        return;
+    }
+
+
+    const price =
+        prompt(
+            "Price:",
+            product.price
+        );
+
+
+    if (price === null) {
+        return;
+    }
+
+
+    const updatedProduct = {
+
+        name: name.trim(),
+
+        category: category.trim(),
+
+        quantity: Number(quantity),
+
+        price: Number(price)
+
+    };
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API.products}/${id}`,
+                {
+
+                    method: "PUT",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(updatedProduct)
+
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to update product"
+            );
+
+        }
+
+
+        await loadProducts();
+
+        await loadLowStock();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to update product."
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   DELETE PRODUCT
+========================================= */
+
+async function deleteProduct(id) {
+
+    const confirmed =
+        confirm(
+            "Are you sure you want to delete this product?"
+        );
+
+
+    if (!confirmed) {
+        return;
+    }
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${API.products}/${id}`,
+                {
+
+                    method: "DELETE"
+
+                }
+            );
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to delete product"
+            );
+
+        }
+
+
+        await loadProducts();
+
+        await loadLowStock();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+        alert(
+            "Unable to delete product."
+        );
+
+    }
+
+}
+
+
+
+/* =========================================
+   POPULATE SALE PRODUCTS
+========================================= */
+
+function populateSaleProducts() {
+
+    saleProductSelect.innerHTML = `
+
+        <option value="">
+            Select Product
+        </option>
+
+    `;
+
+
+    allProducts.forEach(product => {
+
+        const option =
+            document.createElement("option");
+
+
+        option.value =
+            product.id;
+
+
+        option.textContent =
+            `${product.name} (${product.quantity} available)`;
+
+
+        saleProductSelect.appendChild(option);
+
+    });
+
+}
+
+
+
+/* =========================================
+   RECORD SALE
+========================================= */
+
+document
+    .getElementById("add-sale-form")
+    .addEventListener(
+        "submit",
+        async event => {
+
+            event.preventDefault();
+
+
+            const productId =
+                Number(
+                    saleProductSelect.value
+                );
+
+
+            const quantity =
+                Number(
+                    document.getElementById(
+                        "sale-quantity"
+                    ).value
+                );
+
+
+            const message =
+                document.getElementById(
+                    "sale-message"
+                );
+
+
+            /*
+             Adjust field names here only if your
+             SaleController expects different names.
+            */
+
+            const sale = {
+
+                productId: productId,
+
+                quantity: quantity
+
+            };
+
+
+            try {
+
+                const response =
+                    await fetch(
+                        API.sales,
+                        {
+
+                            method: "POST",
+
+                            headers: {
+                                "Content-Type":
+                                    "application/json"
+                            },
+
+                            body:
+                                JSON.stringify(sale)
+
+                        }
+                    );
+
+
+                if (!response.ok) {
+
+                    throw new Error(
+                        "Unable to record sale"
+                    );
+
+                }
+
+
+                message.textContent =
+                    "✓ Sale recorded successfully.";
+
+                message.className =
+                    "form-message success-message";
+
+
+                event.target.reset();
+
+
+                await loadProducts();
+
+                await loadSales();
+
+                await loadLowStock();
+
+
+            } catch (error) {
+
+                console.error(error);
+
+
+                message.textContent =
+                    "✕ Unable to record sale.";
+
+                message.className =
+                    "form-message error-message";
+
+            }
+
+        }
+    );
+
+
+
+/* =========================================
+   LOAD SALES
+========================================= */
+
+async function loadSales() {
+
+    try {
+
+        const response =
+            await fetch(API.sales);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load sales"
+            );
+
+        }
+
+
+        allSales =
+            await response.json();
+
+
+        renderSales();
+
+        updateSalesStatistics();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+
+        salesList.innerHTML = `
+
+            <div class="empty-state">
+                Unable to load sales.
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+
+/* =========================================
+   RENDER SALES
+========================================= */
+
+function renderSales() {
+
+    salesList.innerHTML = "";
+
+
+    if (!allSales.length) {
+
+        salesList.innerHTML = `
+
+            <div class="empty-state">
+
+                No sales recorded yet.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    [...allSales]
+        .reverse()
+        .slice(0, 10)
+        .forEach(sale => {
+
+            const item =
+                document.createElement("div");
+
+
+            item.className =
+                "sale-item";
+
+
+            const productName =
+                sale.product?.name
+                || sale.productName
+                || "Product";
+
+
+            item.innerHTML = `
+
+                <strong>
+                    ${escapeHtml(productName)}
+                </strong>
+
+                <p>
+                    Quantity Sold:
+                    ${sale.quantity ?? 0}
+                </p>
+
+                <p>
+                    ₹${Number(
+                        sale.totalAmount
+                        || sale.total
+                        || 0
+                    ).toFixed(2)}
+                </p>
+
+            `;
+
+
+            salesList.appendChild(item);
+
+        });
+
+}
+
+
+
+/* =========================================
+   SALES STATISTICS
+========================================= */
+
+function updateSalesStatistics() {
+
+    let totalRevenue = 0;
+
+    let totalUnits = 0;
+
+
+    allSales.forEach(sale => {
+
+        totalUnits +=
+            Number(sale.quantity || 0);
+
+
+        totalRevenue +=
+            Number(
+                sale.totalAmount
+                || sale.total
+                || 0
+            );
+
+    });
+
+
+    document.getElementById(
+        "total-sales-count"
+    ).textContent =
+        allSales.length;
+
+
+    document.getElementById(
+        "total-units-sold"
+    ).textContent =
+        totalUnits;
+
+
+    document.getElementById(
+        "total-sales-revenue"
+    ).textContent =
+        `₹${totalRevenue.toFixed(2)}`;
+
+}
+
+
+
+/* =========================================
+   LOW STOCK
+========================================= */
+
+async function loadLowStock() {
+
+    try {
+
+        const response =
+            await fetch(API.lowStock);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load low stock"
+            );
+
+        }
+
+
+        const products =
+            await response.json();
+
+
+        document.getElementById(
+            "low-stock-count"
+        ).textContent =
+            products.length;
+
+
+        renderLowStock(products);
+
+        updateNotifications(products);
+
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+function renderLowStock(products) {
+
+    lowStockList.innerHTML = "";
+
+
+    if (!products.length) {
+
+        lowStockList.innerHTML = `
+
+            <div class="empty-state">
+
+                ✓ All products have sufficient stock.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    products.forEach(product => {
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "sale-item low-stock-item";
+
+
+        item.innerHTML = `
+
+            <strong>
+                ⚠️ ${escapeHtml(product.name)}
+            </strong>
+
+            <p>
+                Category:
+                ${escapeHtml(product.category)}
+            </p>
+
+            <p>
+                Remaining Quantity:
+                ${product.quantity}
+            </p>
+
+        `;
+
+
+        lowStockList.appendChild(item);
+
+    });
+
+}
+
+
+
+/* =========================================
+   NOTIFICATIONS
+========================================= */
+
+function updateNotifications(lowStockProducts) {
+
+    const notificationList =
+        document.getElementById(
+            "notification-list"
+        );
+
+
+    if (!lowStockProducts.length) {
+
+        notificationList.innerHTML = `
+
+            <div class="notification-empty">
+
+                No new notifications.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    notificationList.innerHTML = "";
+
+
+    lowStockProducts.forEach(product => {
+
+        const notification =
+            document.createElement("div");
+
+
+        notification.className =
+            "notification-item";
+
+
+        notification.innerHTML = `
+
+            <span>⚠️</span>
+
+            <div>
+
+                <strong>
+                    Low Stock Alert
+                </strong>
+
+                <p>
+                    ${escapeHtml(product.name)}
+                    has only
+                    ${product.quantity}
+                    units remaining.
+                </p>
+
+            </div>
+
+        `;
+
+
+        notificationList.appendChild(
+            notification
+        );
+
+    });
+
+}
+
+
+
+/* =========================================
+   SECURITY EVENTS
+========================================= */
+
+async function loadSecurityEvents() {
+
+    try {
+
+        const response =
+            await fetch(API.security);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load security events"
+            );
+
+        }
+
+
+        allSecurityEvents =
+            await response.json();
+
+
+        document.getElementById(
+            "security-event-count"
+        ).textContent =
+            allSecurityEvents.length;
+
+
+        renderSecurityEvents(
+            allSecurityEvents.slice(0, 5)
+        );
+
+
+        renderDashboardActivity();
+
+
+    } catch (error) {
+
+        console.error(error);
+
+    }
+
+}
+
+
+
+function renderSecurityEvents(events) {
+
+    securityEventsList.innerHTML = "";
+
+
+    if (!events.length) {
+
+        securityEventsList.innerHTML = `
+
+            <div class="empty-state">
+
+                No security events available.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    events.forEach(event => {
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "security-event";
+
+
+        item.innerHTML = `
+
+            <strong>
+                🛡️
+                ${escapeHtml(
+                    event.eventType
+                    || event.type
+                    || "Security Event"
+                )}
+            </strong>
+
+            <p>
+                User:
+                ${escapeHtml(
+                    event.username
+                    || "Unknown"
+                )}
+            </p>
+
+            <p>
+                ${formatDate(
+                    event.timestamp
+                    || event.createdAt
+                )}
+            </p>
+
+        `;
+
+
+        securityEventsList.appendChild(item);
+
+    });
+
+}
+
+
+
+/* =========================================
+   VIEW ALL SECURITY EVENTS
+========================================= */
+
+document
+    .getElementById("view-all-security")
+    .addEventListener("click", () => {
+
+        renderSecurityEvents(
+            allSecurityEvents
+        );
+
+    });
+
+
+
+/* =========================================
+   BUSINESS INSIGHTS
+========================================= */
+
+async function loadBusinessInsights() {
+
+    try {
+
+        const response =
+            await fetch(API.insights);
+
+
+        if (!response.ok) {
+
+            throw new Error(
+                "Unable to load insights"
+            );
+
+        }
+
+
+        const insights =
+            await response.json();
+
+
+        renderInsights(insights);
+
+
+    } catch (error) {
+
+        businessInsightsList.innerHTML = `
+
+            <div class="empty-state">
+
+                Business insights are currently unavailable.
+
+            </div>
+
+        `;
+
+    }
+
+}
+
+
+
+function renderInsights(insights) {
+
+    businessInsightsList.innerHTML = "";
+
+
+    if (!Array.isArray(insights)) {
+
+        businessInsightsList.innerHTML = `
+
+            <div class="empty-state">
+
+                No business insights available.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    insights.forEach(insight => {
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "sale-item insight-item";
+
+
+        item.innerHTML = `
+
+            <strong>
+                📊
+                ${escapeHtml(
+                    insight.title || "Business Insight"
+                )}
+            </strong>
+
+            <p>
+                ${escapeHtml(
+                    insight.message
+                    || insight.description
+                    || String(insight)
+                )}
+            </p>
+
+        `;
+
+
+        businessInsightsList.appendChild(item);
+
+    });
+
+}
+
+
+
+/* =========================================
+   DASHBOARD ACTIVITY
+========================================= */
+
+function renderDashboardActivity() {
+
+    const activity =
+        document.getElementById(
+            "dashboard-activity"
+        );
+
+
+    activity.innerHTML = "";
+
+
+    const recentEvents =
+        allSecurityEvents.slice(0, 5);
+
+
+    if (!recentEvents.length) {
+
+        activity.innerHTML = `
+
+            <div class="empty-state">
+
+                No recent activity available.
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    recentEvents.forEach(event => {
+
+        const item =
+            document.createElement("div");
+
+
+        item.className =
+            "sale-item";
+
+
+        item.innerHTML = `
+
+            <strong>
+                🛡️
+                ${escapeHtml(
+                    event.eventType
+                    || event.type
+                    || "Security Activity"
+                )}
+            </strong>
+
+            <p>
+                ${escapeHtml(
+                    event.username
+                    || "System"
+                )}
+            </p>
+
+        `;
+
+
+        activity.appendChild(item);
+
+    });
+
+}
+
+
+
+/* =========================================
+   SEARCH
+========================================= */
+
+document
+    .getElementById("global-search")
+    .addEventListener("input", event => {
+
+        const searchText =
+            event.target.value
+                .toLowerCase()
+                .trim();
+
+
+        const filteredProducts =
+            allProducts.filter(product =>
+
+                String(product.name || "")
+                    .toLowerCase()
+                    .includes(searchText)
+
+                ||
+
+                String(product.category || "")
+                    .toLowerCase()
+                    .includes(searchText)
+
+            );
+
+
+        renderProducts(filteredProducts);
+
+    });
+
+
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+/* =========================================
+   LOGOUT
+========================================= */
+
+document
+    .getElementById("logout-button")
+    .addEventListener("click", async () => {
+
+        try {
+
+            const response =
+                await fetch("/logout", {
+                    method: "POST"
+                });
+
+
+            if (response.ok || response.redirected) {
+
+                window.location.href =
+                    "/logout-success.html";
+
+            } else {
+
+                window.location.href =
+                    "/login.html";
+
+            }
+
+        } catch (error) {
+
+            console.error(
+                "Logout failed:",
+                error
+            );
+
+            window.location.href =
+                "/login.html";
+
+        }
+
+    });
+
+
+
+/* =========================================
+   HELPERS
+========================================= */
+
+function escapeHtml(value) {
+
+    return String(value ?? "")
+
+        .replaceAll("&", "&amp;")
+
+        .replaceAll("<", "&lt;")
+
+        .replaceAll(">", "&gt;")
+
+        .replaceAll('"', "&quot;")
+
+        .replaceAll("'", "&#039;");
+
+}
+
+
+
+function formatDate(value) {
+
+    if (!value) {
+        return "Recently";
+    }
+
+
+    try {
+
+        return new Date(value)
+            .toLocaleString();
+
+    } catch {
+
+        return "Recently";
+
+    }
+
+}
+
+
+
+/* =========================================
+   INITIAL LOAD
+========================================= */
+
+async function initializeDashboard() {
+
+    await loadCurrentUser();
+
+    await loadProducts();
+
+    await loadSales();
+
+    await loadLowStock();
+
+    await loadSecurityEvents();
+
+    await loadBusinessInsights();
+
+}
+
+
+initializeDashboard();
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+
+### Get all sales
+
+GET http://localhost:8080/api/sales
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Accept: application/json
+###
+
+### Test insufficient stock (only 1 unit available)
+
+### Test negative unit price
+
+POST http://localhost:8080/api/sales
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Content-Type: application/json
+Accept: application/json
+
+{
+    "productName": "Test Mouse",
+    "quantity": 1,
+    "unitPrice": -450.00
+}
+### Test API without authentication
+
+GET http://localhost:8080/api/sales
+Accept: application/json
+
+### Test overselling protection
+
+POST http://localhost:8080/api/sales
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Content-Type: application/json
+Accept: application/json
+
+{
+    "productName": "Test Mouse",
+    "quantity": 2,
+    "unitPrice": 450.00
+}
+
+### Test zero quantity validation
+
+POST http://localhost:8080/api/sales
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Content-Type: application/json
+Accept: application/json
+
+{
+    "productName": "Test Mouse",
+    "quantity": 0,
+    "unitPrice": 450.00
+}
+
+### Test overselling protection
+
+POST http://localhost:8080/api/sales
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Content-Type: application/json
+Accept: application/json
+
+{
+    "productName": "Test Mouse",
+    "quantity": 2,
+    "unitPrice": 450.00
+}
+### Get security events
+
+GET http://localhost:8080/api/security-events
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Accept: application/json
+### Create a regular business user
+POST http://localhost:8080/api/users
+Authorization: Basic YWRtaW46
+Content-Type: application/json
+Accept: application/json
+
+{
+    "username": "businessuser",
+    "password": "1234Ranjani!",
+    "role": "BUSINESS_USER"
+}
+### Test: Business user must not create accounts
+POST http://localhost:8080/api/users
+Content-Type: application/json
+
+{
+  "username": "businessuser",
+  "password": "1234Ranjani!",
+  "role": "BUSINESS_USER"
+}
+### Create Viewer user
+
+POST http://localhost:8080/api/users
+Authorization: Basic YWRtaW46WU9VUl9BRE1JTl9QQVNTV09SRA==
+Content-Type: application/json
+Accept: application/json
+
+{
+  "username": "vieweruser",
+  "password": "ViewerPass123!",
+  "role": "VIEWER"
+}

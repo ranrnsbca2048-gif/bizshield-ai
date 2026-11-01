@@ -1,0 +1,61 @@
+### 1. Get all products
+GET http://localhost:8080/api/products
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+WWW-Authenticate: Basic realm="Realm", charset="UTF-8"
+X-Content-Type-Options: nosniff
+X-XSS-Protection: 0
+Cache-Control: no-cache, no-store, max-age=0, must-revalidate
+Pragma: no-cache
+Expires: 0
+X-Frame-Options: DENY
+Set-Cookie: JSESSIONID=8269B52A1E786D2857BD192A5BC70D8D; Path=/; HttpOnly
+Content-Length: 0
+Date: Tue, 27 Oct 2026 14:44:22 GMT
+Connection: close
+
+
+###
+
+### 2. Add a new product
+POST http://localhost:8080/api/products
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Content-Type: application/json
+
+{
+    "name": "Test Mouse",
+    "category": "Electronics",
+    "quantity": 3,
+    "price": 450.00,
+    "minimumStock": 10
+}
+
+###
+
+### 3. Get a product by ID
+GET http://localhost:8080/api/products/1
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+
+###
+
+### 4. Update a product
+PUT http://localhost:8080/api/products/1
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+Content-Type: application/json
+
+{
+    "name": "Notebook",
+    "category": "Stationery",
+    "quantity": 75,
+    "price": 45.00,
+    "minimumStock": 15
+}
+
+###
+
+### 5. Delete a product
+DELETE http://localhost:8080/api/products/1
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=
+
+### Get low-stock products
+GET http://localhost:8080/api/products/low-stock
+Authorization: Basic ZGV2dXNlcjpDaG9vc2VZb3VyT3duTG9jYWxQYXNzd29yZDEyMyE=

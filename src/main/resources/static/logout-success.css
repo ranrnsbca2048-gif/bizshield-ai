@@ -1,0 +1,473 @@
+
+/* =====================================================
+   BIZSHIELD AI — LOGOUT SUCCESS PAGE
+===================================================== */
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+/* =====================================================
+   THEME VARIABLES
+===================================================== */
+
+:root {
+
+    --text-primary: #382b26;
+    --text-secondary: #7d6b63;
+
+    --primary: #6b351f;
+    --primary-dark: #3f1d10;
+
+    --card-bg: rgba(255, 250, 246, 0.88);
+
+    --border: rgba(107, 53, 31, 0.18);
+
+    --overlay-1: rgba(255, 250, 246, 0.90);
+    --overlay-2: rgba(237, 215, 202, 0.75);
+
+    --shadow: 0 25px 70px rgba(55, 28, 18, 0.20);
+
+}
+
+
+/* =====================================================
+   BODY
+===================================================== */
+
+body {
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    min-height: 100vh;
+
+    color: var(--text-primary);
+
+    overflow: hidden;
+
+}
+
+
+/* =====================================================
+   BACKGROUND LOGO
+===================================================== */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    background-image:
+        url("/images/bizshield-logo.png");
+
+    background-repeat: no-repeat;
+
+    background-position: center;
+
+    background-size:
+        min(750px, 75vw);
+
+    filter: blur(12px);
+
+    transform: scale(1.08);
+
+    opacity: 0.16;
+
+    z-index: -2;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   BACKGROUND OVERLAY
+===================================================== */
+
+.background-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--overlay-1),
+            var(--overlay-2)
+        );
+
+    z-index: -1;
+
+    pointer-events: none;
+
+}
+
+
+/* =====================================================
+   MAIN CONTAINER
+===================================================== */
+
+.logout-container {
+
+    position: relative;
+
+    z-index: 1;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 30px;
+
+}
+
+
+/* =====================================================
+   LOGOUT CARD
+===================================================== */
+
+.logout-card {
+
+    width: 100%;
+
+    max-width: 520px;
+
+    padding: 50px 45px;
+
+    text-align: center;
+
+    background:
+        var(--card-bg);
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 30px;
+
+    box-shadow:
+        var(--shadow);
+
+    backdrop-filter:
+        blur(18px);
+
+    -webkit-backdrop-filter:
+        blur(18px);
+
+    animation:
+        fadeUp 0.6s ease;
+
+}
+
+
+/* =====================================================
+   LOGO
+===================================================== */
+
+.logo-container {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    margin-bottom: 22px;
+
+}
+
+
+.bizshield-logo {
+
+    width: 150px;
+
+    max-width: 70%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 10px 20px
+            rgba(80, 40, 25, 0.15)
+        );
+
+}
+
+
+/* =====================================================
+   SUCCESS ICON
+===================================================== */
+
+.success-icon {
+
+    width: 64px;
+
+    height: 64px;
+
+    margin:
+        0 auto
+        24px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    color: white;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 34px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 12px 30px
+        rgba(107, 53, 31, 0.25);
+
+}
+
+
+/* =====================================================
+   TEXT
+===================================================== */
+
+.logout-card h1 {
+
+    color:
+        var(--text-primary);
+
+    font-size:
+        clamp(30px, 4vw, 38px);
+
+    margin-bottom: 16px;
+
+    letter-spacing:
+        -0.7px;
+
+}
+
+
+.logout-card p {
+
+    color:
+        var(--text-secondary);
+
+    font-size: 16px;
+
+    line-height: 1.7;
+
+    margin:
+        0 auto
+        32px;
+
+    max-width: 420px;
+
+}
+
+
+/* =====================================================
+   LOGIN AGAIN BUTTON
+===================================================== */
+
+.login-again-btn {
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap: 10px;
+
+    min-width: 190px;
+
+    height: 56px;
+
+    padding:
+        0 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--primary-dark),
+            var(--primary)
+        );
+
+    color: white;
+
+    text-decoration: none;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    box-shadow:
+        0 12px 30px
+        rgba(60, 28, 16, 0.25);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+
+}
+
+
+.login-again-btn:hover {
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 16px 35px
+        rgba(60, 28, 16, 0.32);
+
+}
+
+
+.login-again-btn:active {
+
+    transform:
+        translateY(-1px);
+
+}
+
+
+.login-again-btn span {
+
+    font-size: 20px;
+
+}
+
+
+/* =====================================================
+   ANIMATION
+===================================================== */
+
+@keyframes fadeUp {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+
+    }
+
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .logout-container {
+
+        padding: 20px;
+
+    }
+
+
+    .logout-card {
+
+        padding:
+            38px 24px;
+
+        border-radius: 24px;
+
+    }
+
+
+    .bizshield-logo {
+
+        width: 120px;
+
+    }
+
+
+    .success-icon {
+
+        width: 58px;
+
+        height: 58px;
+
+        font-size: 30px;
+
+    }
+
+
+    .logout-card p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+
+        animation-duration:
+            0.01ms !important;
+
+        transition-duration:
+            0.01ms !important;
+
+    }
+
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Logout Successful | BizShield AI</title>
+
+    <link rel="stylesheet" href="/logout-success.css">
+</head>
+
+<body>
+
+    <div class="background-overlay"></div>
+
+    <main class="logout-container">
+
+        <div class="logout-card">
+
+            <div class="logo-container">
+                <img src="/images/bizshield-logo.png"
+                     alt="BizShield AI Logo"
+                     class="bizshield-logo">
+            </div>
+
+            <div class="success-icon">✓</div>
+
+            <h1>Logout Successful</h1>
+
+            <p>
+                You have been successfully logged out of BizShield AI.
+                Thank you for using our platform. We hope to see you again soon!
+            </p>
+
+            <a href="/login.html" class="login-again-btn">
+                Log In Again
+                <span>↻</span>
+            </a>
+
+        </div>
+
+    </main>
+
+    <script>
+
+    const savedTheme =
+        localStorage.getItem("bizshield-theme")
+        || "dark";
+
+    if (savedTheme === "dark") {
+
+        document.body.classList.add("dark-mode");
+
+    }
+
+</script>
+</body>
+</html>
