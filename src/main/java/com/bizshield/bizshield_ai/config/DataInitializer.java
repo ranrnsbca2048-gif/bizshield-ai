@@ -11,12 +11,39 @@ import org.springframework.context.annotation.Configuration;
 public class DataInitializer {
 
     @Bean
-    CommandLineRunner createViewerUser(
+    CommandLineRunner createDefaultUsers(
             UserRepository userRepository,
             UserService userService) {
 
         return args -> {
 
+            // ADMIN USER
+            if (!userRepository.existsByUsername("admin")) {
+
+                userService.createUser(
+                        "admin",
+                        "AdminPass123!",
+                        "ADMIN"
+                );
+
+                System.out.println("ADMIN USER CREATED SUCCESSFULLY");
+            }
+
+
+            // BUSINESS USER
+            if (!userRepository.existsByUsername("businessuser")) {
+
+                userService.createUser(
+                        "businessuser",
+                        "BusinessPass123!",
+                        "BUSINESS_USER"
+                );
+
+                System.out.println("BUSINESS USER CREATED SUCCESSFULLY");
+            }
+
+
+            // VIEWER USER
             if (!userRepository.existsByUsername("vieweruser")) {
 
                 userService.createUser(
@@ -25,9 +52,7 @@ public class DataInitializer {
                         "VIEWER"
                 );
 
-                System.out.println(
-                        "VIEWER USER CREATED SUCCESSFULLY"
-                );
+                System.out.println("VIEWER USER CREATED SUCCESSFULLY");
             }
         };
     }
